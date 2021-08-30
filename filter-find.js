@@ -53,7 +53,7 @@ Output:
 */
 
 export function getAllDairy(arr) {
-    return [];
+    return arr.filter(food => food.category === 'dairy');
 }
 
 /*
@@ -69,7 +69,7 @@ Output:
 */
 
 export function getAllFruitsThatCostMoreThanTwo(arr) {
-    return [];
+    return arr.filter(food => food.category === 'fruit').filter(food => food.price > 2);
 }
 
 
@@ -84,7 +84,7 @@ Output:
 */
 
 export function findTheCheese(arr) {
-    return [];
+    return arr.find(food => food.id === 'cheese');
 }
 
 
@@ -93,6 +93,7 @@ Output:
 ['apple', 'banana']
 */
 
+// Is it cool that I used the map method here???
 export function listNamesOfAllFruits(arr) {
-    return [];
+    return arr.filter(food => food.category === 'fruit').map(fruit => fruit.id);
 }
