@@ -109,7 +109,7 @@ Output:
 }
 */
 
-export function countByCategory(arr) {
+export function countByCategoryWithForEach(arr) {
     let newObj = {
         fruit: 0,
         other: 0,
@@ -129,3 +129,36 @@ export function countByCategory(arr) {
     });
     return newObj;
 }
+
+
+export function countByCategoryWithFilter(arr) {
+
+    const newObj = {
+        fruit: arr.filter(item => item.category === 'fruit').length,
+        other: arr.filter(item => item.category === 'other').length,
+        dairy: arr.filter(item => item.category === 'dairy').length
+    };
+
+    return newObj;
+}
+
+
+
+
+// export function countByCategory(arr) {
+//     arr.reduce((newObj, item) => {
+//         if(item.category === 'dairy'){
+//             newObj.dairy += 1;
+//         }
+//         if(item.category === 'fruit'){
+//             newObj.fruit++;
+//         }
+//         if(item.category === 'other'){
+//             newObj.other++;
+//         }
+    
+//         return newObj;
+
+//     }, { fruit: 0, other: 0, dairy: 0 });
+// }
+
