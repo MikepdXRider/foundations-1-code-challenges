@@ -143,22 +143,20 @@ export function countByCategoryWithFilter(arr) {
 }
 
 
-
-
-// export function countByCategory(arr) {
-//     arr.reduce((newObj, item) => {
-//         if(item.category === 'dairy'){
-//             newObj.dairy += 1;
-//         }
-//         if(item.category === 'fruit'){
-//             newObj.fruit++;
-//         }
-//         if(item.category === 'other'){
-//             newObj.other++;
-//         }
+export function countByCategoryWithReduce(arr) {
+    return arr.reduce((newObj, item) => {
+        if(item.category === 'dairy'){
+            newObj.dairy += 1;
+        }
+        if(item.category === 'fruit'){
+            newObj.fruit++;
+        }
+        if(item.category === 'other'){
+            newObj.other++;
+        }
     
-//         return newObj;
+        return newObj;
 
-//     }, { fruit: 0, other: 0, dairy: 0 });
-// }
+    }, { fruit: 0, other: 0, dairy: 0 });
+}
 
