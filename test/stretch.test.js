@@ -4,6 +4,7 @@ import {
     makeAHashMap,
     countByCategoryWithFilter,
     countByCategoryWithForEach,
+    countByCategoryWithReduce
 } from '../stretch.js';
 
 const { test, skip } = QUnit;
@@ -136,6 +137,24 @@ test('should make a count object using filter method', (expect) => {
     //Act 
     // Call the function you're testing and set the result to a const
     const actual = countByCategoryWithFilter(groceries);
+
+    //Expect
+    // Make assertions about what is expected versus the actual result
+    expect.deepEqual(actual, expected);
+});
+
+test('should make a count object using reduce method', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const expected = {
+        fruit: 2,
+        other: 1,
+        dairy: 2
+    };
+    
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const actual = countByCategoryWithReduce(groceries);
 
     //Expect
     // Make assertions about what is expected versus the actual result
